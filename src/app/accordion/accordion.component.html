@@ -1,0 +1,12 @@
+<div *ngFor="let quest of questions" class="accordion">
+    <div class="accordion-head">
+      <h3>
+        {{ quest.title }}
+        <button type="button" (click)="toggleShow(quest.id)">
+          {{show && selectedId === quest.id? "-" : "+" }}
+        </button>
+      </h3>
+    </div>
+
+    <p *ngIf="show && selectedId === quest.id">{{ quest.info }}</p>
+  </div>
